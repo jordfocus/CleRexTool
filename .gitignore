@@ -1,1 +1,2 @@
-ResourceCleaner/bin/Release/ResourceCleaner.exe
+ResourceCleaner/bin/
+ResourceCleaner/obj/
