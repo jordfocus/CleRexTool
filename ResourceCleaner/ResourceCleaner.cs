@@ -109,8 +109,7 @@ namespace ResourceCleaner
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // TODO: Add link to the article....
-            var sInfo = new ProcessStartInfo("https://dotjord.wordpress.com/");
+            var sInfo = new ProcessStartInfo("https://dotjord.wordpress.com/2016/01/31/how-to-clean-your-unusedorphaned-resource-items-in-few-easy-steps/");
             Process.Start(sInfo);
         }
 
