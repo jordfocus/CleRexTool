@@ -1,2 +1,4 @@
-ResourceCleaner/bin/
-ResourceCleaner/obj/
+bin
+obj
+.suo
+.vs
