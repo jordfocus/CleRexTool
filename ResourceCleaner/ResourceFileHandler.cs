@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Resources;
 using System.Text.RegularExpressions;
 
@@ -77,10 +77,14 @@ namespace ResourceCleaner
         /// <param name="projectFolder">Project in which we are searching the usage of the RESX items</param>
         /// <param name="filter">Filter for the file types that we want to be included in the search</param>
         /// <returns></returns>
-        public string[] GetUnusedItems(string projectFolder, string filter = "*.cs")
+        public string[] GetUnusedItems(string projectFolder, string filterText = "*.cs")
         {
             var unusedItems = new List<string>();
-            var files = Directory.GetFiles(projectFolder, filter, SearchOption.AllDirectories);
+
+            var files = filterText.Split(';')
+                .SelectMany(filter => Directory.GetFiles(projectFolder, filter, SearchOption.AllDirectories))
+                .ToArray();
+
             foreach (var key in ResourceItems.Keys)
             {
                 var args = new ProgressEventArgs(string.Format("\n-> Searching for key {0}", key));

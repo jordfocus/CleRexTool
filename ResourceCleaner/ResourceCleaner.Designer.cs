@@ -155,7 +155,7 @@
             this.filterTextBox.Name = "filterTextBox";
             this.filterTextBox.Size = new System.Drawing.Size(208, 20);
             this.filterTextBox.TabIndex = 6;
-            this.filterTextBox.Text = "*.cs";
+            this.filterTextBox.Text = "*.cs;*.cshtml";
             // 
             // label2
             // 
